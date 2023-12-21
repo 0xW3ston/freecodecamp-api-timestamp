@@ -1,0 +1,1 @@
+I did learn how to use the Date Object in javascript in order to see UNIX and UTC values.
