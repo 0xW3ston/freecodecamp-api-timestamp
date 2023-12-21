@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-router.get("/:date", (req, res) => {
+router.get("/:date?", (req, res) => {
     const datePattern = /^\d{4}-\d{1,2}-\d{1,2}$/;
     const unixPattern = /^\d+$/
     const date_string = req.params.date;
