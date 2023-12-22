@@ -1,5 +1,13 @@
 const router = require("express").Router();
 
+router.get("/", (req, res) => {
+    const dateObj = new Date();
+    res.json({
+        "unix": dateObj.getTime(),
+        "utc": dateObj.toUTCString()
+    })
+})
+
 router.get("/:date?", (req, res) => {
     const unixPattern = /^\d+$/
     const date_string = req.params.date;
@@ -26,13 +34,5 @@ router.get("/:date?", (req, res) => {
         "utc": dateObj.toUTCString()
     });
 });
-
-router.get("/", (req, res) => {
-    const dateObj = new Date();
-    res.json({
-        "unix": dateObj.getTime(),
-        "utc": dateObj.toUTCString()
-    })
-})
 
 module.exports = router;
