@@ -27,4 +27,12 @@ router.get("/:date?", (req, res) => {
     });
 });
 
+router.get("/", (req, res) => {
+    const dateObj = new Date();
+    res.json({
+        "unix": dateObj.getTime(),
+        "utc": dateObj.toUTCString()
+    })
+})
+
 module.exports = router;
