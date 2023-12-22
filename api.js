@@ -29,7 +29,7 @@ router.get("/:date?", (req, res) => {
     }
     
     res.json({
-        "unix": dateObj.valueOf(),
+        "unix": dateObj.getTime(),
         "utc": dateObj.toUTCString()
     });
 });
