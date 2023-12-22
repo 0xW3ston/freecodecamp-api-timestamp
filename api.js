@@ -8,7 +8,7 @@ router.get("/:date?", (req, res) => {
 
     if (!datePattern.test(date_string) && !unixPattern.test(date_string))
     {
-        res.json({error : "Invalid Date"});
+        res.json({"error" : "Invalid Date"});
         return;
     }
 
@@ -24,13 +24,13 @@ router.get("/:date?", (req, res) => {
 
     if (!(dateObj.valueOf()))
     {
-        res.json({error : "Invalid Date"});
+        res.json({"error" : "Invalid Date"});
         return;
     }
     
     res.json({
-        unix: dateObj.valueOf(),
-        utc: dateObj.toUTCString()
+        "unix": dateObj.valueOf(),
+        "utc": dateObj.toUTCString()
     });
 });
 
